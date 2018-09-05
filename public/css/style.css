@@ -1,3 +1,4 @@
+/** tablesort **/
 th[role=columnheader]:not(.no-sort) {
 	cursor: pointer;
 }
