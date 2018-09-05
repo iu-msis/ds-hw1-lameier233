@@ -60,7 +60,8 @@
 
   <h1>Wanna Know More?</h1>
 
-  <table>
+  <table id="taskTable">
+    <thead>
     <tr>
       <th>Past Employer</th>
       <th>Contact</th>
@@ -68,6 +69,8 @@
       <th>Date</th>
       <th>Salary($)</th>
     </tr>
+    </thead>
+    <tbody>
     <tr>
       <td>Cummins Inc.</td>
       <td>Jennifer Hope</td>
@@ -110,6 +113,7 @@
       <td>04/2/2008-04/1/2011</td>
       <td>75k</td>
     </tr>
+  </tbody>
   </table>
 
   <form>
@@ -123,10 +127,12 @@
     <input type="date" name="date"><br>
     Salary($):<br>
     <input type="number" name="salary"><br>
-
   </form>
 
+  <script src="js/tablesort.min.js"></script>
+  <script>
+    new Tablesort(document.getElementById('taskTable'));
+  </script>
+  
 </body>
-
-
 </html>
