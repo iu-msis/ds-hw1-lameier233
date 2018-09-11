@@ -1,73 +1,75 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!--bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <style type="text/css">
-  .topnav {
-      background-color: #235;
-      overflow: hidden;
-  }
-
-  .topnav a {
-      float: left;
-      color: #f2f2f2;
-      font-size: 22px;
-      padding: 12px 20px;
-  }
-
-  .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-  }
-
-  #name {
-	top: -10px;
-	color: #235;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-  }
-
-  </style>
-  <title>User Information</title>
-</head>
-
-<body>
-
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>"
-  <script src="js/profile.app.js"></script>
-
-  <div class="topnav">
-    <a href="index.html">Home</a>
-    <a href="UserInfor.html">User Information</a>
-    <a href="table.html">Table</a>
-  </div>
-
-  <h1>About Me</h1>
-  <img src="static/img/HW1_headshot.jpg" alt="Headshot" style="width:325px;height:325px;">
-
-  <div id="header">
-			<p id="name">Bobby Hill here. Nice to make your acquaintance:)</p>
-      <p>
-      Made in the U.S.
-      </p>
-      <p>
-      I was born on 3/7/1970 and I currently live on 3041 Railroad St. I am 48 years old and happily married with three kids.
-      </p>
-      <p>
-        <a href="mailto:bobby.hill37@example.com">bobby.hill37@example.com</a><br>
-      </p>
-      <p>
-      Go Manchester United FC!
-      </p>
-      <img src="static/img/Manchester United FC.png" alt="Mascot" style="width:325px;height:325px;">
-
-
-	</div>
-</body>
-
-
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style type="text/css">
+            .topnav {
+            background-color: #235;
+            overflow: hidden;
+            }
+            .topnav a {
+            float: left;
+            color: #f2f2f2;
+            font-size: 22px;
+            padding: 12px 20px;
+            }
+            .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+            }
+            #name {
+            top: -10px;
+            color: #235;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            }
+        </style>
+        <title>User Information</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="index.html">Home</a>
+            <a href="UserInfor.html">User Information</a>
+            <a href="table.html">Table</a>
+        </div>
+        <div id="profileContainer" class="container">
+            <h1>About Me</h1>
+            <table class="table">
+                <tbody>
+                    <tr v-for="result in results">
+                        <td>
+                            Name:
+                        </td>
+                        <td>{{result.name.first}} {{result.name.last}}</td>
+                    </tr>
+                    <tr v-for="result in results">
+                        <td>Email:</td>
+                        <td>{{result.email}}</td>
+                    </tr>
+                    <tr v-for="result in results">
+                        <td>Phone Number</td>
+                        <td>{{result.phone}}</td>
+                    </tr>
+                    <tr v-for="result in results">
+                        <td>Date of Birth</td>
+                        <td>{{prettydate(result.dob.date)}}</td>
+                    </tr>
+                    <tr v-for="result in results">
+                        <td>Age</td>
+                        <td>{{result.dob.age}}</td>
+                    </tr>
+                    <tr v-for="result in results">
+                        <td>city</td>
+                        <td>{{result.location.city}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <script src="js/profile.app.js"></script>
+    </body>
 </html>

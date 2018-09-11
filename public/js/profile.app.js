@@ -1,6 +1,23 @@
 var profileApp = new Vue({
-  el: '#profile',
+  el: '#profileContainer',
   data: {
-    message: 'Hello Vue!'
+   results : ""
+},
+methods: {
+  prettydate: function(date){
+    return moment(date).format('l');
+  },
+  fetchUser(){
+    fetch('https://randomuser.me/api')
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(myJson) {
+        this.results = myJson;
+      });
   }
+},
+created:  function(){
+  this.fetchUser();
+}
 })
