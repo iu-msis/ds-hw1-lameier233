@@ -66,6 +66,7 @@ methods: {
   prettydate: function(date){
     return moment(date).format('l');
   },
+
   fetchUser(){
     fetch('https://randomuser.me/api')
       .then(function(response) {
