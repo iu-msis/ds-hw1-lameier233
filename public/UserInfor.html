@@ -63,28 +63,24 @@
                         </td>
                         <td>{{prettydate(jsonResults.dob.date)}}</td>
                     </tr>
-
-
-                    <!-- <tr v-for="result in results">
-                        <td>Email:</td>
-                        <td>{{projects.results[0]}}</td>
+                    <tr>
+                        <td>
+                          Age:
+                        </td>
+                        <td>{{jsonResults.dob.age}}</td>
                     </tr>
-                    <tr v-for="result in results">
-                        <td>Phone Number</td>
-                        <td>{{result.phone}}</td>
+                    <tr>
+                        <td>
+                          Email:
+                        </td>
+                        <td>{{jsonResults.email}}</td>
                     </tr>
-                    <tr v-for="result in results">
-                        <td>Date of Birth</td>
-                        <td>{{prettydate(result.dob.date)}}</td>
+                    <tr>
+                        <td>
+                          City:
+                        </td>
+                        <td>{{jsonResults.location.city}}</td>
                     </tr>
-                    <tr v-for="result in results">
-                        <td>Age</td>
-                        <td>{{result.dob.age}}</td>
-                    </tr>
-                    <tr v-for="result in results">
-                        <td>city</td>
-                        <td>{{result.location.city}}</td>
-                    </tr> -->
                 </tbody>
             </table>
         </div>
