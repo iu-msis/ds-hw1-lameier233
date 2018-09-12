@@ -39,15 +39,15 @@
             <h1>About Me</h1>
             <table class="table">
                 <tbody>
-                    <tr v-for="result in results">
+                    <tr>
                         <td>
                             Name:
                         </td>
-                        <td>{{result.name.first}} {{result.name.last}}</td>
+                        <td>{{jsonResults.name.first}}</td>
                     </tr>
-                    <tr v-for="result in results">
+                    <!-- <tr v-for="result in results">
                         <td>Email:</td>
-                        <td>{{result.email}}</td>
+                        <td>{{projects.results[0]}}</td>
                     </tr>
                     <tr v-for="result in results">
                         <td>Phone Number</td>
@@ -64,7 +64,7 @@
                     <tr v-for="result in results">
                         <td>city</td>
                         <td>{{result.location.city}}</td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
