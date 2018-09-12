@@ -1,7 +1,12 @@
 var profileApp = new Vue({
   el: '#profileContainer',
   data: {
-    result: ''
+    result: [
+      {
+        name: '',
+        title: 
+      }
+    ]
 },
 methods: {
   prettydate: function(date){
