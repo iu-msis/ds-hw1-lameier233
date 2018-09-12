@@ -41,10 +41,30 @@
                 <tbody>
                     <tr>
                         <td>
-                            Name:
+                          First Name:
                         </td>
                         <td>{{jsonResults.name.first}}</td>
                     </tr>
+                    <tr>
+                        <td>
+                          Last Name:
+                        </td>
+                        <td>{{jsonResults.name.last}}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                          Phone Number:
+                        </td>
+                        <td>{{jsonResults.phone}}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                          Date of Birth:
+                        </td>
+                        <td>{{prettydate(jsonResults.dob.date)}}</td>
+                    </tr>
+
+
                     <!-- <tr v-for="result in results">
                         <td>Email:</td>
                         <td>{{projects.results[0]}}</td>
