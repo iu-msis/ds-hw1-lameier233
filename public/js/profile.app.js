@@ -1,9 +1,7 @@
 var profileApp = new Vue({
   el: '#profileContainer',
   data: {
-    jsonResults: {
-      name: ''
-    }
+    jsonResults: {}
 },
 
 methods: {
