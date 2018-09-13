@@ -39,51 +39,51 @@
             <h1>About Me</h1>
             <table class="table">
                 <tbody>
-                    <tr>
+                    <tr v-for="result in jsonResults">
                         <td>
                           First Name:
                         </td>
-                        <td>{{jsonResults.name.first.toUpperCase()}}</td>
+                        <td>{{result.name.first.toUpperCase()}}</td>
                     </tr>
-                    <tr>
+                    <tr v-for="result in jsonResults">
                         <td>
                           Last Name:
                         </td>
-                        <td>{{jsonResults.name.last.toUpperCase()}}</td>
+                        <td>{{result.name.last.toUpperCase()}}</td>
                     </tr>
-                    <tr>
+                    <tr v-for="result in jsonResults">
                         <td>
                           Phone Number:
                         </td>
-                        <td>{{jsonResults.phone}}</td>
+                        <td>{{result.phone}}</td>
                     </tr>
-                    <tr>
+                    <tr v-for="result in jsonResults">
                         <td>
                           Date of Birth:
                         </td>
-                        <td>{{prettydate(jsonResults.dob.date)}}</td>
+                        <td>{{prettydate(result.dob.date)}}</td>
                     </tr>
-                    <tr>
+                    <tr v-for="result in jsonResults">
                         <td>
                           Age:
                         </td>
-                        <td>{{jsonResults.dob.age}}</td>
+                        <td>{{result.dob.age}}</td>
                     </tr>
-                    <tr>
+                    <tr v-for="result in jsonResults">
                         <td>
                           Email:
                         </td>
-                        <td><a href="mailto:john@example.com">{{jsonResults.email}}</a></td>
+                        <td><a href="mailto:john@example.com">{{result.email}}</a></td>
                     </tr>
-                    <tr>
+                    <tr v-for="result in jsonResults">
                         <td>
                           City:
                         </td>
-                        <td>{{jsonResults.location.city.toUpperCase()}}</td>
+                        <td>{{result.location.city.toUpperCase()}}</td>
                     </tr>
                 </tbody>
             </table>
-            <button v-on:click="fetchUser()">Refresh</button>
+            <button class="btn btn-success" v-on:click="fetchUser()">Refresh</button>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>

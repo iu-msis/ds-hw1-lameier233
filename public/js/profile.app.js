@@ -1,7 +1,7 @@
 var profileApp = new Vue({
   el: '#profileContainer',
   data: {
-    jsonResults: {}
+    jsonResults: []
 },
 
 methods: {
@@ -12,7 +12,7 @@ methods: {
   fetchUser(){
     fetch('https://randomuser.me/api')
       .then(response => response.json())
-      .then(json => {this.jsonResults = json.results[0]})
+      .then(json => {this.jsonResults = json.results})
       .catch( err => {
         console.log(err);
       })
