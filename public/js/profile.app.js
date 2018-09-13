@@ -8,6 +8,9 @@ methods: {
   prettydate: function(date){
     return moment(date).format('l');
   },
+  age: function (date){
+    return moment().diff(moment(date),'years');
+  },
 
   fetchUser(){
     fetch('https://randomuser.me/api')
