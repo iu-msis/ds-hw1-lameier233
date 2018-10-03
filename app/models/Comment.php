@@ -1,6 +1,6 @@
 <?php
 
-class Homework
+class Comment
 {
   public $id;
   public $comment;
@@ -24,8 +24,8 @@ class Homework
     // 4. Handle the results
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $newHomework =  new Homework($row);
-      array_push($arr, $newHomework);
+      $newComment =  new Comment($row);
+      array_push($arr, $newComment);
     }
 
     return $arr;
