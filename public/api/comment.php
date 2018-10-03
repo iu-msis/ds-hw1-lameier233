@@ -1,7 +1,3 @@
-//app-data-work-stub.sql
-//Team.php: MODEL
-//team.php: GET; within api
-
 <?php
 require '../../app/common.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
