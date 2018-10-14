@@ -61,47 +61,28 @@
 
   <h1>Comments</h1>
 
-  <table id="commentTable">
+  <table id="commentTable" class="table">
     <thead>
     <tr>
       <th>ID</th>
       <th>Comment</th>
     </tr>
     </thead>
-    <tbody id="commentTableBody">
-    <tr>
-      <td>Cummins Inc.</td>
-      <td>Jennifer Hope</td>
+    <tr v-for="course in courses">
+        <td>{{ course.CourseId }}</td>
+        <td>{{ course.AuthorId }}</td>
     </tr>
-    <tr>
-      <td>KPMG</td>
-      <td>Thomas Gerry</td>
-    </tr>
-    <tr>
-      <td>Crowe</td>
-      <td>Ricardo Albot</td>
-    </tr>
-    <tr>
-      <td>Deloitte</td>
-      <td>Charles Darcy</td>
-    </tr>
-    <tr>
-      <td>EY</td>
-      <td>Viggy Berry</td>
-    </tr>
-    <tr>
-      <td>Accenture</td>
-      <td>Sara Hawkings</td>
-    </tr>
-  </tbody>
+
   </table>
 
-  <form id="newCommentForm" action="../../app/common.php" method="post">
+  <form id="newCommentForm" action="../../public/api/commentPost.php" method="post">
     Comment:<br>
     <input type="text" name="comment" id="comment"><br>
     <br>
     <input type="submit" value="Submit" id="submitNewComment">
   </form>
+
+  <script src="comments.js"></script>
 
   <script src="js/tablesort.min.js"></script>
   <script>
