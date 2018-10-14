@@ -1,21 +1,35 @@
-var newComment = new Vue({
-  el: '#profileContainer',
+var commentsApp = new Vue({
+  el: '#commentMain',
   data: {
-    jsonResults: []
-},
+    comment: [ ],
+  },
 
-methods: {
-  fetchComment(){
-    fetch('http://ec2-34-223-213-113.us-west-2.compute.amazonaws.com/api/comment.php')
-      .then(response => response.json())
-      .then(json => {this.jsonResults = json.results})
-      .catch( err => {
-        console.log(err);
+  methods: {
+      // POST to remote server
+      fetch('api/comment.php', {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+        body: s // body data type must match "Content-Type" header
       })
+      .then( response => response.json() )
+      .then( json => {this.work.push(json)})
+      .catch( err => {
+        console.error('COMMENT POST ERROR:');
+        console.error(err);
+      })
+    },
+
+  created () {
+    // TODO: Fetch task-specific data
+    // fetch('api/task?id=4')
+    fetch('api/comment.php?id='+id)
+    .then( response => response.json() )
+    .then( json => {commensApp.comment = json} )
+    .catch( err => {
+      console.log('COMMENT FETCH ERROR:');
+      console.log(err);
+    })
   }
-},
-created:  function(){
-  this.fetchComment();
-  console.log(this.jsonResults);
-}
-});
+})
