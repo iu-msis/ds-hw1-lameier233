@@ -1,6 +1,5 @@
 <?php
 
-require '../../app/models/Comment.php';
 $comment = new Comment($_POST);
 
 $comment->create();
