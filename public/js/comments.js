@@ -1,7 +1,8 @@
 var commentsApp = new Vue({
   el: '#commentMain',
   data: {
-    comment: [ ]
+    comment: [ ],
+    commentForm:{ };
   },
 
   methods: {
@@ -23,8 +24,18 @@ var commentsApp = new Vue({
         console.error('COMMENT POST ERROR:');
         console.error(err);
       })
-    }
+
+      this.commentForm = this.getEmptyCommentForm():
+    },
+
+    getEmptyCommentForm(){
+      return{
+        id: null,
+        comment:null
+      }
+    },
   },
+
   created () {
     // TODO: Fetch task-specific data
     // fetch('api/task?id=4')
