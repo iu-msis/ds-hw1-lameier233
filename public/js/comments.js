@@ -5,6 +5,7 @@ var commentsApp = new Vue({
   },
 
   methods: {
+    handleCommentPost() {
       // POST to remote server
       fetch('api/comment.php', {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -19,8 +20,8 @@ var commentsApp = new Vue({
         console.error('COMMENT POST ERROR:');
         console.error(err);
       })
-    },
-
+    }
+  },
   created () {
     // TODO: Fetch task-specific data
     // fetch('api/task?id=4')
