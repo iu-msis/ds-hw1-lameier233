@@ -77,7 +77,6 @@
 
     <form id="newCommentForm" @submit.prevent = "handleCommentPost">
       <div class ="form-group row">
-        <label for="comment" class="col-sm-1 col-form-label"> Add Comment: </label>
         <div>
           <input type = "text" id="comment" v-model="commentForm.comment" class="form-control" required />
         </div>
