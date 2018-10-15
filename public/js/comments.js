@@ -14,7 +14,7 @@ var commentsApp = new Vue({
         body: s // body data type must match "Content-Type" header
       })
       .then( response => response.json() )
-      .then( json => {this.work.push(json)})
+      .then( json => {this.comment.push(json)})
       .catch( err => {
         console.error('COMMENT POST ERROR:');
         console.error(err);
@@ -26,7 +26,7 @@ var commentsApp = new Vue({
     // fetch('api/task?id=4')
     fetch('api/comment.php?id='+id)
     .then( response => response.json() )
-    .then( json => {commensApp.comment = json} )
+    .then( json => {commentsApp.comment = json} )
     .catch( err => {
       console.log('COMMENT FETCH ERROR:');
       console.log(err);
