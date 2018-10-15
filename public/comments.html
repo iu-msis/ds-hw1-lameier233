@@ -51,36 +51,37 @@
 </head>
 
 <body>
+  <div id="commentMain">
+    <div class="topnav">
+      <a href="index.html">Home</a>
+      <a href="UserInfor.html">User Information</a>
+      <a href="table.html">Table</a>
+      <a href="comments.html">Comments</a>
+    </div>
 
-  <div class="topnav">
-    <a href="index.html">Home</a>
-    <a href="UserInfor.html">User Information</a>
-    <a href="table.html">Table</a>
-    <a href="comments.html">Comments</a>
+    <h1>Comments</h1>
+
+    <table id="commentTable" class="table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Comment</th>
+      </tr>
+      </thead>
+      <tr v-for="c in comment">
+          <td>{{ c.id }}</td>
+          <td>{{ c.comment }}</td>
+      </tr>
+
+    </table>
+
+    <form id="newCommentForm" action="../../public/api/commentPost.php" method="post">
+      Comment:<br>
+      <input type="text" name="comment" id="comment"><br>
+      <br>
+      <input type="submit" value="Submit" id="submitNewComment">
+    </form>
   </div>
-
-  <h1>Comments</h1>
-
-  <table id="commentTable" class="table">
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Comment</th>
-    </tr>
-    </thead>
-    <tr v-for="c in comment">
-        <td>{{ c.id }}</td>
-        <td>{{ c.comment }}</td>
-    </tr>
-
-  </table>
-
-  <form id="newCommentForm" action="../../public/api/commentPost.php" method="post">
-    Comment:<br>
-    <input type="text" name="comment" id="comment"><br>
-    <br>
-    <input type="submit" value="Submit" id="submitNewComment">
-  </form>
 
   <script src="comments.js"></script>
 
