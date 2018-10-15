@@ -6,6 +6,7 @@ var commentsApp = new Vue({
 
   methods: {
     handleCommentPost() {
+      const s = JSON.stringify (this.commentForm)
       // POST to remote server
       fetch('api/comment.php', {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
