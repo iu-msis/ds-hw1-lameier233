@@ -21,7 +21,7 @@ var commentsApp = new Vue({
       .then( function(response) {
         console.log(response);
         return response.json();
-      }
+      })
       .then( json => {this.comment.push(json)})
       .catch( err => {
         console.error('COMMENT POST ERROR:');
