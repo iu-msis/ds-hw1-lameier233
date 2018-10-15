@@ -25,7 +25,7 @@ var commentsApp = new Vue({
         console.error(err);
       })
 
-      this.commentForm = this.getEmptyCommentForm():
+      this.commentForm = this.getEmptyCommentForm();
     },
 
     getEmptyCommentForm(){
