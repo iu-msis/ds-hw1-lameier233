@@ -18,6 +18,7 @@ var commentsApp = new Vue({
         },
         body: s // body data type must match "Content-Type" header
       })
+      .then( console.log(response))
       .then( response => response.json() )
       .then( json => {this.comment.push(json)})
       .catch( err => {
