@@ -63,10 +63,10 @@
 
     <table id="commentTable" class="table">
       <thead>
-      <tr>
-        <th>ID</th>
-        <th>Comment</th>
-      </tr>
+        <tr>
+          <th>ID</th>
+          <th>Comment</th>
+        </tr>
       </thead>
       <tr v-for="c in comment">
           <td>{{ c.id }}</td>
@@ -75,7 +75,7 @@
 
     </table>
 
-    <form id="newCommentForm" action="../../public/api/commentPost.php" method="post">
+    <form id="newCommentForm" action="../api/commentPost.php" method="post">
       Comment:<br>
       <input type="text" name="comment" id="comment"><br>
       <br>
@@ -83,7 +83,7 @@
     </form>
   </div>
 
-  <script src="comments.js"></script>
+  <script src="js/comments.js"></script>
 
 </body>
 </html>
