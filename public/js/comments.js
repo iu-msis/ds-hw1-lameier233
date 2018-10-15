@@ -1,7 +1,7 @@
 var commentsApp = new Vue({
   el: '#commentMain',
   data: {
-    comment: [ ],
+    comment: [ ]
   },
 
   methods: {
