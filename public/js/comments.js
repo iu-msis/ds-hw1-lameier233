@@ -2,7 +2,7 @@ var commentsApp = new Vue({
   el: '#commentMain',
   data: {
     comment: [ ],
-    commentForm: []
+    commentForm: {}
   },
 
   methods: {
@@ -34,7 +34,6 @@ var commentsApp = new Vue({
 
     getEmptyCommentForm(){
       return{
-        id: null,
         comment:null
       }
     },
