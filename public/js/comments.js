@@ -24,7 +24,7 @@ var commentsApp = new Vue({
   created () {
     // TODO: Fetch task-specific data
     // fetch('api/task?id=4')
-    fetch('api/comment.php?id='+id)
+    fetch('api/comment.php')
     .then( response => response.json() )
     .then( json => {commentsApp.comment = json} )
     .catch( err => {
